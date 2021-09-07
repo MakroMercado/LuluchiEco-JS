@@ -15,11 +15,13 @@
 </head>
 <body style="text-align: center;">
     <header>
-        <nav class="navbar navbar-expand-sm fixed-top">
-            <a class="navbar-brand" href="#">
-                <img src="../img/logoRosa.png" alt="logoLuluchi">
-            </a>
-            <a id="nav-carrito" class="nav-link carrito" href="#carrito"><i class="fas fa-shopping-cart"></i>(<span id="items">0</span>)</a>
+        <nav class="navbar navbar-expand-sm fixed-top justify-content-between">
+          <a class="navbar-brand" href="#">
+            <img src="img/logoRosa.png" alt="logoLuluchi">
+          </a>
+          <a id="nav-carrito" class="nav-link carrito animate__animated" data-toggle="modal" data-target="#modalCarrito">
+            <i class="fas fa-shopping-cart"></i>(<span id="items">0</span>)
+          </a>
         </nav>
     </header>
     
@@ -53,9 +55,42 @@
             </div>
           </section>
       
+          <!-- PRODUCTOS -->
           <div id="productos">
-            <!-- PRODUCTOS INGRESADOS POR JS -->
+            <!-- INGRESADOS POR JS -->
           </div>
+      
+      
+          <!-- MODAL CARRITO -->
+          
+          <div class="modal fade" id="modalCarrito" tabindex="-1"aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title text-center">Tu carrito</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body msjCarrito">
+                  <div id="productosCarrito">
+                    <div class="itemCarrito">
+                      <div class="itemCarrito__img"></div>
+                      <div class="itemCarrito__cantidad"></div>
+                      <div class="itemCarrito__precio"></div>
+                    </div>
+                  </div>
+                  <a href="error.html"><button class="btn btn-success">Ir al carrito</i></a>
+                  <button type="button" class="btn btn-danger" id="vaciarCarrito">Vaciar carrito</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Seguir comprando</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+      
+          <!-- Alerta añadido al carrito -->
+          <div id="avisoCarrito"></div>
     </main>
     <footer>
       <div class="pie">
