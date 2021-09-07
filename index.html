@@ -4,10 +4,437 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tienda ecológica. Productos sustentables y ecologia">
+    <meta name="keywords" content="LULUCHI, TIENDA, COMPRAS, PRODUCTOS, ECOLOGIA, SUSTENTABLE, AMBIENTE">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Luluchi Eco</title>
 </head>
 <body style="text-align: center;">
-    <h1>Algoritmo utilizando un ciclo</h1>
-    <script src="script.js"></script>
+    <header>
+        <nav class="navbar navbar-expand-sm fixed-top">
+            <a class="navbar-brand" href="#">
+                <img src="../img/logoRosa.png" alt="logoLuluchi">
+            </a>
+            <a id="iconCarrito" class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>(<span id="items">0</span>)</a>
+        </nav>
+    </header>
+    
+    <main id="containerTienda">
+        <h1 class="tituloSeccion animate__animated animate__pulse">Nuestros Productos</h1>
+    
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownCategorias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categorias
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownCategorias">
+                <button class="dropdown-item" type="button">Todos los productos</button>
+                <button class="dropdown-item" type="button">Sin plastico</button>
+                <button class="dropdown-item" type="button">Salud</button>
+                <button class="dropdown-item" type="button">Higiene</button>
+            </div>
+        </div>
+        
+        <div class="productos">
+            <article class="producto wow animate__animated animate__fadeInUp">
+                <div class="producto__nombre">
+                  <h3>Shampoo Sólido</h3>
+                </div>
+                <div class="producto__borde"></div>
+                
+                <div id="shampoo" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/tienda/shampoo/shampoo1.jpg" alt="Imagen Shampoo" >
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/tienda/shampoo/shampoo2.jpg" alt="Imagen Shampoo">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/tienda/shampoo/shampoo3.jpg" alt="Imagen Shampoo">
+                    </div>
+                  </div>
+                  
+                  <a class="carousel-control-prev" href="#shampoo" data-slide="prev">
+                    <i class="fas fa-chevron-left flecha"></i>
+                  </a>
+                  <a class="carousel-control-next" href="#shampoo" data-slide="next">
+                    <i class="fas fa-chevron-right flecha"></i>
+                  </a>
+                  
+                </div>
+        
+                <div class="producto__precio">
+                  <p>$710,00 - En Stock</p>
+                </div>
+                
+                <!-- Modal Descripcion-->
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalShampoo">
+                  Mas info <i class="fas fa-book"></i>
+                </button>
+                <div class="modal fade" id="modalShampoo" tabindex="-1"aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Shampoo Solido Natural Hidratante</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="descripcion">
+                          <p>
+                            ¿Cómo usar el Shampoo sólido?
+                          </p>
+                          <p>
+                            Es importante saber que nuestro Shampoo no tiene el llamado periodo de depuración, tu cabello quedará limpio desde el primer lavado. Si, tenés que tener presente, que vas a tener que armar una nueva rutina de lavado, acostumbrarse a un producto sólido sin siliconas no es fácil y puede llevar su tiempo, pero seguro vale la pena.
+                          </p>
+                        </div>
+                        <hr>
+                        <div>
+                          <ul>
+                            <li>Marca: The Mash Store</li>
+                            <li>Es hipoalergénico: No</li>
+                            <li>Biodegradables y sin envases plásticos</li>
+                            <li>Detiene la caída del cabello, favoreciendo la irrigaciòn sanguínea y el crecimiento capilar.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- Modal Carrito-->
+                <button type="button" class="btn btn-success sumarCarrito" data-toggle="modal" data-target="#modalCarrito">
+                  Añadir <i class="fas fa-cart-plus"></i>
+                </button>
+                <div class="modal fade" id="modalCarrito" tabindex="-1"aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body msjCarrito">
+                        <h5>¡Producto añadido al carrito!</h5>
+                        <a href="#"><button class="btn btn-success">Ver carrito</i></a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+              </article>
+        
+              <article class="producto wow animate__animated animate__fadeInUp">
+                <div class="producto__nombre">
+                  <h3>Acondicionador Sólido</h3>
+                </div>
+                <div class="producto__borde"></div>
+                
+                <div id="acon" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/tienda/acondicionadores/acon1.jpg" alt="Imagen Acon" >
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/tienda/acondicionadores/acon2.jpg" alt="Imagen Acon" >
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/tienda/acondicionadores/acon3.jpg" alt="Imagen Acon" >
+                    </div>
+                  </div>
+                  
+                  <a class="carousel-control-prev" href="#acon" data-slide="prev">
+                    <i class="fas fa-chevron-left flecha"></i>
+                  </a>
+                  <a class="carousel-control-next" href="#acon" data-slide="next">
+                    <i class="fas fa-chevron-right flecha"></i>
+                  </a>
+                  
+                </div>
+        
+                <div class="producto__precio">
+                  <p>$710,00 - En Stock</p>
+                </div>
+                
+                <!-- Modal Descripcion-->
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAcon">
+                  Mas info <i class="fas fa-book"></i>
+                </button>
+                <div class="modal fade" id="modalAcon" tabindex="-1"aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Acondicionador Solido Natural Hidratante</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="descripcion">
+                          <p>
+                            ¿Cómo usar el Acondicionador sólido?
+                          </p>
+                          <p>
+                            Es importante saber que nuestro Shampoo no tiene el llamado periodo de depuración, tu cabello quedará limpio desde el primer lavado. Si, tenés que tener presente, que vas a tener que armar una nueva rutina de lavado, acostumbrarse a un producto sólido sin siliconas no es fácil y puede llevar su tiempo, pero seguro vale la pena.
+                          </p>
+                        </div>
+                        <hr>
+                        <div>
+                          <ul>
+                            <li>Marca: The Mash Store</li>
+                            <li>Es hipoalergénico: No</li>
+                            <li>Biodegradables y sin envases plásticos</li>
+                            <li>Detiene la caída del cabello, favoreciendo la irrigaciòn sanguínea y el crecimiento capilar.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- Modal Carrito-->
+                <button type="button" class="btn btn-success sumarCarrito" data-toggle="modal" data-target="#modalCarrito">
+                  Añadir <i class="fas fa-cart-plus"></i>
+                </button>
+                <div class="modal fade" id="modalCarrito" tabindex="-1"aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body msjCarrito">
+                        <h5>¡Producto añadido al carrito!</h5>
+                        <a href="#"><button class="btn btn-success">Ver carrito</i></a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+              </article>
+
+              <article class="producto wow animate__animated animate__fadeInUp">
+                <div class="producto__nombre">
+                  <h3>Cepillo de Bambú</h3>
+                </div>
+                <div class="producto__borde"></div>
+                
+                <div id="cepillo" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/tienda/cepillos/cepillo1.jpg" alt="Imagen Cepillo" >
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/tienda/cepillos/cepillo2.jpg" alt="Imagen Cepillo">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/tienda/cepillos/cepillo3.jpg" alt="Imagen Cepillo">
+                    </div>
+                  </div>
+                  
+                  <a class="carousel-control-prev" href="#cepillo" data-slide="prev">
+                    <i class="fas fa-chevron-left flecha"></i>
+                  </a>
+                  <a class="carousel-control-next" href="#cepillo" data-slide="next">
+                    <i class="fas fa-chevron-right flecha"></i>
+                  </a>
+                  
+                </div>
+        
+                <div class="producto__precio">
+                  <p>$170,00 - En Stock</p>
+                </div>
+                
+                <!-- Modal Descripcion-->
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalCepillo">
+                  Mas info <i class="fas fa-book"></i>
+                </button>
+                <div class="modal fade" id="modalCepillo" tabindex="-1"aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Cepillo De Dientes Ecológico Meraki</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="descripcion">
+                          <p>
+                            Los cepillos de bambú tienen la misma vida útil que los cepillos de dientes convencionales fabricados con plástico.
+                          </p>
+                          <p>
+                            El bambú es una de las plantas con mayor tasa de crecimiento del mundo. En su proceso de crecimiento secuestra grandes cantidades de CO2, gas de efecto invernadero. Además, contiene agentes antibacterianos de origen natural, por lo que no requieren fertilizantes ni pesticidas para crecer.
+                          </p>
+                        </div>
+                        <hr>
+                        <div>
+                          <ul>
+                            <li>Marca: Meraki</li>
+                            <li>97% biodegradables - 3% reciclable</li>
+                            <li>Dureza de las cerdas: Medio</li>
+                            <li>El packaging y mango pueden ser compostados.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- Modal Carrito-->
+                <button type="button" class="btn btn-success sumarCarrito" data-toggle="modal" data-target="#modalCarrito">
+                  Añadir <i class="fas fa-cart-plus"></i>
+                </button>
+                <div class="modal fade" id="modalCarrito" tabindex="-1"aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body msjCarrito">
+                        <h5>¡Producto añadido al carrito!</h5>
+                        <a href="#"><button class="btn btn-success">Ver carrito</i></a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+              </article>
+
+              <article class="producto wow animate__animated animate__fadeInUp">
+                <div class="producto__nombre">
+                  <h3>Protectores Diarios</h3>
+                </div>
+                <div class="producto__borde"></div>
+                
+                <div id="protector" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/tienda/protectores/protector1.jpg" alt="Imagen Protector" >
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/tienda/protectores/protector2.jpg" alt="Imagen Protector">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/tienda/protectores/protector3.jpg" alt="Imagen Protector">
+                    </div>
+                  </div>
+                  
+                  <a class="carousel-control-prev" href="#protector" data-slide="prev">
+                    <i class="fas fa-chevron-left flecha"></i>
+                  </a>
+                  <a class="carousel-control-next" href="#protector" data-slide="next">
+                    <i class="fas fa-chevron-right flecha"></i>
+                  </a>
+                  
+                </div>
+        
+                <div class="producto__precio">
+                  <p>$830,00 - En Stock</p>
+                </div>
+                
+                <!-- Modal Descripcion-->
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalProtector">
+                  Mas info <i class="fas fa-book"></i>
+                </button>
+                <div class="modal fade" id="modalProtector" tabindex="-1"aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Protectores Diarios En Tela Ecológicos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="descripcion">
+                          <p>
+                            Por los materiales con que está confeccionado son ecológicos e hipoalergenicos.
+                          </p>
+                          <p>
+                            No utilizamos tela siempre seca o microfibra porque contienen poliéster, gracias a ello se evitan irritaciones y/o alergia.
+                            No contienen químicos, no contaminan el medio ambiente.
+                          </p>
+                        </div>
+                        <hr>
+                        <div>
+                          <ul>
+                            <li>Marca: Ecology Fem</li>
+                            <li>Tamaño: Regular - 15 cm alto 5.5 cm ancho más alas</li>
+                            <li>Durabilidad: se estima de 3 a 5 años</li>
+                            <li>Variedad de diseños</li>
+                            <li>Pack de 3 unidades</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- Modal Carrito-->
+                <button type="button" class="btn btn-success sumarCarrito" data-toggle="modal" data-target="#modalCarrito">
+                  Añadir <i class="fas fa-cart-plus"></i>
+                </button>
+                <div class="modal fade" id="modalCarrito" tabindex="-1"aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body msjCarrito">
+                        <h5>¡Producto añadido al carrito!</h5>
+                        <a href="#"><button class="btn btn-success">Ver carrito</i></a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer>
+      <div class="pie">
+        <div class="pieLogo">
+          <img src="img/logo.png" alt="logoLuluchi">
+        </div>
+        <div class="pieSlogan">Luluchi Eco - Tiendita Sustentable</div>
+        <div class="pieRedes">
+          <a href="https://www.instagram.com/luluchi.eco" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/luluchieco" target="_blank">
+            <i class="fab fa-facebook-square"></i>
+          </a>
+          <a href="https://wa.me/1155886454" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+      <div class="copy">
+        <h6>© Copyright 2021 - Maximiliano Mercado</h6>
+      </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>new WOW().init();</script>
+    <script src="js/functions.js"></script>
+    <script src="js/script.js"></script>
 </body>
-</html> 
+</html>

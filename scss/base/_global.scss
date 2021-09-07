@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Londrina+Solid:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+*{
+    font-family: 'Noto Sans JP', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.tituloSeccion{
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Sigmar One', cursive;
+    color: $verde;
+    padding: 1rem 0;
+}
+
+#arriba{
+    position: fixed;
+    bottom: 20px;
+    right: 2%;
+    font-size: 40px;
+    a{
+    text-decoration: none;
+    color: rgba(66, 141, 56, 0.753);
+    }
+}
+
+.ocultar{
+    display: none;
+}
+
+.mostrar{
+    display: block;
+}
+
+.noscroll {
+    height: 100vh;
+    overflow: hidden;
+}

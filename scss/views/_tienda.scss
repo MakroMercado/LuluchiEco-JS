@@ -1,0 +1,70 @@
+#containerTienda{
+  width: 100%;
+  padding: 100px 0;
+  padding-bottom: 20px;
+  background-color: #f5eeee;
+  text-align: center;
+}
+
+.productos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin: 0 1.5rem;
+}
+
+
+.producto {
+  width: 270px;
+  text-align: center;
+  margin: 1rem;
+  background-color: #e9dfdf;
+  box-shadow: 0px 0px 2px 2px #c9c0c6;
+  border-radius: 5px;
+  padding: 1em;
+
+  &__nombre {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    h3 {
+      font-weight: 500;
+      font-size: 1.3rem;
+      margin: 5px 0;
+      color: #1D2C36;
+    }
+  }   
+  &__borde {
+    border-top: 5px solid $verde;
+    margin-bottom: 10px; 
+  }
+  .producto__precio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center; 
+  
+    p {
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: $verde; 
+    }
+
+    .noStock{
+      color:red;
+    }
+  }
+  button{
+    border-color: $verde;
+    background-color: $verde;
+  }
+
+  .sinStock{
+    text-decoration: line-through;
+  }
+}   
+
+.producto:hover{
+  box-shadow: 0px 0px 5px 5px #3f3b3e;
+}

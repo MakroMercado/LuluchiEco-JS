@@ -1,0 +1,399 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Londrina+Solid:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  font-family: 'Noto Sans JP', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.tituloSeccion {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: 'Sigmar One', cursive;
+  color: #6e8f6e;
+  padding: 1rem 0;
+}
+
+#arriba {
+  position: fixed;
+  bottom: 20px;
+  right: 2%;
+  font-size: 40px;
+}
+
+#arriba a {
+  text-decoration: none;
+  color: rgba(66, 141, 56, 0.753);
+}
+
+.ocultar {
+  display: none;
+}
+
+.mostrar {
+  display: block;
+}
+
+.noscroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.navbar {
+  background-color: #6e8f6e;
+  width: 100%;
+  z-index: 1000;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  min-height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar .nav-link {
+  margin-left: 5px;
+}
+
+.navbar .nav-link, .navbar .navbar-brand {
+  color: #ffbdbd;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  font-family: 'Londrina Solid', cursive;
+  font-size: 20px;
+}
+
+.navbar .nav-link:hover {
+  padding-left: 25px;
+  padding-right: 25px;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.navbar .navbar-brand img {
+  height: 40px;
+}
+
+.navbar--scroll {
+  border-bottom: 1px solid rgba(10, 9, 9, 0.836);
+}
+
+.carritoHamb {
+  width: 100%;
+  text-align: right;
+  padding-right: 0;
+}
+
+.menu-btn {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger {
+  width: 30px;
+  height: 6px;
+  background: #ffbdbd;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+          box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 6px;
+  background: #ffbdbd;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+          box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.menu-btn__burger::after {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+  -webkit-transform: rotate(45deg) translate(-35px, 35px);
+          transform: rotate(45deg) translate(-35px, 35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+  -webkit-transform: rotate(-45deg) translate(-35px, -35px);
+          transform: rotate(-45deg) translate(-35px, -35px);
+}
+
+footer {
+  background-color: #6e8f6e;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.pie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pie .pieLogo, .pie .pieSlogan, .pie .pieRedes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
+  width: 100%;
+}
+
+.pie .pieLogo img {
+  height: 40px;
+}
+
+.pie .pieSlogan {
+  font-size: 18px;
+}
+
+.pie .pieRedes {
+  font-size: 40px;
+}
+
+.pie .pieRedes a {
+  text-decoration: none;
+  color: black;
+}
+
+.pie .pieRedes a:hover {
+  color: #333;
+}
+
+.pie .pieRedes .fa-instagram {
+  margin-right: 10px;
+}
+
+.pie .pieRedes .fa-facebook-square {
+  margin: 0 10px;
+}
+
+.pie .pieRedes .fa-whatsapp {
+  margin-left: 10px;
+}
+
+.copy {
+  margin-top: 20px;
+}
+
+.copy h6 {
+  font-size: 14px;
+  display: inline;
+  border-top: 1px solid #000;
+}
+
+@media all and (min-width: 768px) {
+  .pie .pieLogo, .pie .pieSlogan, .pie .pieRedes {
+    width: 33%;
+  }
+  .pie .pieLogo {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .pie .pieRedes {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+#containerTienda {
+  width: 100%;
+  padding: 100px 0;
+  padding-bottom: 20px;
+  background-color: #f5eeee;
+  text-align: center;
+}
+
+.productos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 0 1.5rem;
+}
+
+.producto {
+  width: 270px;
+  text-align: center;
+  margin: 1rem;
+  background-color: #e9dfdf;
+  -webkit-box-shadow: 0px 0px 2px 2px #c9c0c6;
+          box-shadow: 0px 0px 2px 2px #c9c0c6;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.producto__nombre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.producto__nombre h3 {
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin: 5px 0;
+  color: #1D2C36;
+}
+
+.producto__borde {
+  border-top: 5px solid #6e8f6e;
+  margin-bottom: 10px;
+}
+
+.producto .producto__precio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.producto .producto__precio p {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #6e8f6e;
+}
+
+.producto .producto__precio .noStock {
+  color: red;
+}
+
+.producto button {
+  border-color: #6e8f6e;
+  background-color: #6e8f6e;
+}
+
+.producto .sinStock {
+  text-decoration: line-through;
+}
+
+.producto:hover {
+  -webkit-box-shadow: 0px 0px 5px 5px #3f3b3e;
+          box-shadow: 0px 0px 5px 5px #3f3b3e;
+}
+
+.carousel-item img {
+  width: 200px;
+  height: 200px;
+  border-radius: 15%;
+  overflow: hidden;
+  border: 4px solid #c4b9b9;
+}
+
+.flecha {
+  font-size: 30px;
+}
+
+.modal-body ul {
+  list-style-position: inside;
+}
+
+.msjCarrito button {
+  margin: 10px;
+}
+
+.msjCarrito a {
+  text-decoration: none;
+  color: white;
+}
+/*# sourceMappingURL=main.css.map */
