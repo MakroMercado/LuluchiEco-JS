@@ -19,29 +19,43 @@
             <a class="navbar-brand" href="#">
                 <img src="../img/logoRosa.png" alt="logoLuluchi">
             </a>
-            <a id="iconCarrito" class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>(<span id="items">0</span>)</a>
+            <a id="nav-carrito" class="nav-link carrito" href="#carrito"><i class="fas fa-shopping-cart"></i>(<span id="items">0</span>)</a>
         </nav>
     </header>
     
     <main id="containerTienda">
         <h1 class="tituloSeccion animate__animated animate__pulse">Nuestros Productos</h1>
     
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownCategorias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Categorias
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownCategorias">
-              <button class="dropdown-item" type="button">Todos los productos</button>
-              <button class="dropdown-item" type="button">Sin plastico</button>
-              <button class="dropdown-item" type="button">Salud</button>
-              <button class="dropdown-item" type="button">Higiene</button>
+        <section id="dropdownsProductos">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownCategorias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categorias
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownCategorias">
+                <button class="dropdown-item itemCategoria" type="button" categoria="todos">Todos los productos</button>
+                <button class="dropdown-item itemCategoria" type="button" categoria="sinplastico">Sin plastico</button>
+                <button class="dropdown-item itemCategoria" type="button" categoria="salud">Salud</button>
+                <button class="dropdown-item itemCategoria" type="button" categoria="higiene">Higiene</button>
+                <button class="dropdown-item itemCategoria" type="button" categoria="stock">Solo en stock</button>
+              </div>
             </div>
-        </div>
-          
-        <div id="productos">
+        
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownOrdenar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Ordenar por:
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownOrdenar">
+                <button class="dropdown-item itemOrdenar" type="button" orden="nombreASC">Nombre - ASC</button>
+                <button class="dropdown-item itemOrdenar" type="button" orden="nombreDESC">Nombre - DESC</button>
+                <button class="dropdown-item itemOrdenar" type="button" orden="precioASC">Precio - ASC</button>
+                <button class="dropdown-item itemOrdenar" type="button" orden="precioDESC">Precio - DESC</button>
+              </div>
+            </div>
+          </section>
+      
+          <div id="productos">
             <!-- PRODUCTOS INGRESADOS POR JS -->
-            
-        </div>
+          </div>
     </main>
     <footer>
       <div class="pie">

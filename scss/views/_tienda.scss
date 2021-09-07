@@ -68,3 +68,10 @@
 .producto:hover{
   box-shadow: 0px 0px 5px 5px #3f3b3e;
 }
+
+#dropdownsProductos{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  margin: 2rem 2rem;
+}
