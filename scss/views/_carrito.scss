@@ -1,0 +1,73 @@
+#carrito{
+    padding: 100px 5%;
+    background-color: $rosaO;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid $verde;
+    thead{
+        font-size: 16px;
+    }
+    tbody{
+        font-size: 14px;
+    }
+    th, td{
+        padding: 1%;
+    }
+
+}
+
+.accordion {
+    background-color: $verde;
+    color: black;
+    cursor: pointer;
+    padding: 20px 1%;
+    width: 100%;
+    text-align: left;
+    border: none;
+    transition: 0.3s;
+    margin: 30px 0 5px 0;
+}
+
+.desplegable {
+    padding: 5px;
+    display: none;
+    overflow: hidden;
+}
+
+.active{
+    display: block;
+}
+
+.btnForm{
+    margin-top: 3px;
+    background-color: $verde;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.radios{
+    display: flex;
+    flex-flow: row wrap;
+    div{
+        width: 100%;
+    }
+}
+
+.datos{
+    display: flex;
+    flex-flow: row wrap;
+    div{
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 768px){
+    .datos{
+        div{
+            width: 50%;
+        }
+    }
+}

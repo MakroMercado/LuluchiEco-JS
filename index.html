@@ -29,7 +29,7 @@
 
     <section id="dropdownsProductos">
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownCategorias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownCategorias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" actual="todos">
           Categorias
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownCategorias">
@@ -75,8 +75,12 @@
             <div id="productosCarrito">
               
             </div>
-            <a href="#"><button class="btn btn-success btnsCarrito">Ir al carrito</i></a>
+            <div id="precioTotal">
+
+            </div>
+            
             <button type="button" class="btn btn-danger btnsCarrito" id="vaciarCarrito">Vaciar carrito</button>
+            <a href="carrito.html"><button id="btnFinalizar" class="btn btn-success btnsCarrito">Finalizar Compra</i></a>
             <button type="button" class="btn btn-secondary btnsCarrito" data-dismiss="modal">Seguir comprando</button>
           </div>
         </div>
@@ -126,6 +130,6 @@
   <script>new WOW().init();</script>
   <script src="js/functions.js"></script>
   <!-- SCRIPT JS CODER-->
-  <script src="js/script.js"></script>
+  <script src="js/tienda.js"></script>
 </body>
 </html>

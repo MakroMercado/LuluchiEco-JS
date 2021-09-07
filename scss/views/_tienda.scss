@@ -35,16 +35,23 @@
   bottom: 0px;
 }
 
+.imgVacio{
+  width: 200px;
+}
+
 .itemCarrito{
-  padding: 0 5%;
+  padding: 10px 5%;
+  margin-bottom: 5px;
   display: flex;
   flex-flow: row wrap;
+  border-bottom: 1px solid #c9c6c6;
   &__imagen{
     display:flex;
     flex-flow: row wrap;
     width: 100%;
     img{
       width: 100px;
+      height: 100px;
       border: 4px solid $verde;
       border-radius: 15%;
     }
@@ -93,10 +100,28 @@
   padding: 0;
 }
 
+#arriba {
+  position: fixed;
+  bottom: 20px;
+  right: 2%;
+  font-size: 40px;
+}
+
+#arriba a {
+  text-decoration: none;
+  color: rgba(66, 141, 56, 0.753);
+}
+
+.ocultar {
+  display: none;
+}
+
+.mostrar {
+  display: block;
+}
 
 @media all and (min-width: 452px){
   .itemCarrito{
-    padding: 0 5%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -144,7 +169,6 @@
 
 @media all and (min-width: 992px){
   .itemCarrito{
-    padding: 0 5%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;

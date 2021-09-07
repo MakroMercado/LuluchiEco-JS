@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luluchi Eco - Tienda Sustentable, Ecologia y todo para cuidar nuestro planeta">
+    <meta name="keywords" content="LULUCHI, ECOLOGIA, SUSTENTABLE, TIENDA, RECICLAJE, MEDIO AMBIENTE">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Finalizar Compra</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm fixed-top justify-content-between">
+        <a class="navbar-brand" href="#">
+            <img src="img/logoRosa.png" alt="logoLuluchi">
+        </a>
+        <a href="index.html" class="nav-link">
+            Volver a la tienda
+        </a>
+        </nav>
+    </header>
+
+    <main id="carrito">
+        <h2 class="tituloSeccion animate__animated animate__pulse">Finalizá tu compra</h2>
+        <form action="">
+            <div class="accordion">Tus artículos</div>
+            <div id="despUno" class="desplegable active">
+                <table id="listado" border>
+                    <thead>
+                        <th>PRODUCTO</th>
+                        <th>CANTIDAD</th>
+                        <th>PRECIO</th>
+                    </thead>
+                    <tbody id="lista">
+                    </tbody>
+                </table>
+                <a href="index.html"><button class="btnForm" type="button">Volver a la tienda</button></a>
+                <button id="btnSigUno" class="btnForm" type="button">Siguiente</button>
+            </div>
+
+            <div class="accordion">Tus Datos</div>
+            <div id="despDos" class="desplegable">
+                <div class="datos">
+                    <div>
+                        <label for="inputNombre">Nombre/s:</label>
+                        <input type="text" name="nombre" id="inputNombre" class="inputDatos">
+                    </div>
+                    <div>
+                        <label for="inputApellido">Apellido/s:</label>
+                        <input type="text" name="apellido" id="inputApellido" class="inputDatos">
+                    </div>
+                    <div>
+                        <label for="inputEmail">Correo electrónico:</label>
+                        <input type="text" name="email" id="inputEmail" class="inputDatos">
+                    </div>
+                    <div>
+                        <label for="inputTel">Teléfono de contacto:</label>
+                        <input type="text" name="telefono" id="inputTel" class="inputDatos">
+                    </div>
+                </div>
+
+                <button id="btnAntUno" class="btnForm" type="button">Anterior</button>
+                <button id="btnSigDos" class="btnForm" type="button" disabled>Siguiente</button>
+            </div>
+
+            <div class="accordion">Pago y envío</div>
+            <div id="despTres" class="desplegable">
+                <h5>Medio de pago:</h5>
+                <div class="radios">
+                    <div>
+                        <input type="radio" name="medios" id="credito" value="credito" checked>
+                        <label for="credito">Tarjeta de crédito</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="medios" id="mercadoPago" value="mercadopago">
+                        <label for="mercadoPago">Mercado Pago</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="medios" id="efectivo" value="efectivo">
+                        <label for="efectivo">Efectivo</label>
+                    </div>
+                </div>
+
+                <h5>Datos del envío</h5>
+                <div class="radios">
+                    <div>
+                        <input type="radio" name="tipoEnvio" id="sucursal" value="sucursal" checked>
+                        <label for="sucursal">Retiro en Sucursal (Tortuguitas)</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="tipoEnvio" id="domicilio" value="domicilio">
+                        <label for="domicilio">Envío a domicilio</label>
+                    </div>
+                    <div id="divDomicilio" style="display: none;">
+                        <div>
+                            <label for="direccion">Direccion:</label>
+                            <input type="text" name="direccion" id="direccion" class="inputDomicilio">
+                        </div>
+                        <div>
+                            <label for="ciudad">Ciudad:</label>
+                            <input type="text" name="ciudad" id="ciudad" class="inputDomicilio">
+                        </div>
+                        <div>
+                            <label for="codigopostal">Codigo Postal:</label>
+                            <input type="text" name="codigopostal" id="codigopostal" class="inputDomicilio">
+                        </div>
+                    </div>
+                </div>
+                <button id="btnAntDos" class="btnForm" type="button">Anterior</button>
+                <button class="btnForm" id="btnSubmit" type="button">Confirmar</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <div class="pie">
+        <div class="pieLogo">
+            <img src="img/logo.png" alt="logoLuluchi">
+        </div>
+        <div class="pieSlogan">Luluchi Eco - Tiendita Sustentable</div>
+        <div class="pieRedes">
+            <a href="https://www.instagram.com/luluchi.eco" target="_blank">
+            <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/luluchieco" target="_blank">
+            <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="https://wa.me/1155886454" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        </div>
+        <div class="copy">
+        <h6>© Copyright 2021 - Maximiliano Mercado</h6>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>new WOW().init();</script>
+    <script src="js/functions.js"></script>
+    <!-- SCRIPT JS CODER-->
+    <script src="js/carrito.js"></script>
+</body>
+</html>
