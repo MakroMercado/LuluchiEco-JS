@@ -1,7 +1,7 @@
 class Producto {
     constructor(nombre, categoria, precio) {
         this.nombre  = nombre.toUpperCase();
-        this.categoria = categoria;
+        this.categoria = categoria.toUpperCase();
         this.precio  = parseFloat(precio);
         this.cantidad = 0;
     }
@@ -16,51 +16,46 @@ class Producto {
 }
 
 //PRODUCTOS//
-const producto1 = new Producto("Cepillo de Bambu", "Ecologico", 650);
+const productos = [];
+productos.push(new Producto("Cepillo de Bambu", "Ecologico", 650));
 
-const producto2 = new Producto("Shampoo Sólido", "Higiene", 710);
+productos.push(new Producto("Shampoo Sólido", "Higiene", 780));
 
-const producto3 = new Producto("Acondicionador Sólido","Higiene", 710);
+productos.push(new Producto("Acondicionador Sólido","Higiene", 710));
 
-const producto4 = new Producto("Protectores Diarios de Tela", "Sustentable", 250);
+productos.push(new Producto("Protectores Diarios de Tela", "Sustentable", 250));
+
+//ORDENO LOS PRODUCTOS POR PRECIO//
+productos.sort((productoA, productoB) => productoA.precio - productoB.precio);
 
 //MUESTRA UN CATALOGO Y RECIBE POR EL PROMPT EL PRODUCTO ELEGIDO//
 mostrarCatalogo = () =>{
     alert("Ingrese nro de Producto que desea agregar: -->");
-    return prompt("1 - " + producto1.nombre + "  |  2 - " + producto2.nombre + "  |  3 - " + producto3.nombre + "  |  4 - " + producto4.nombre);
+
+    let stringCatalogo ="";
+
+    for (let i = 0; i < productos.length; i++){
+        stringCatalogo += (i+1).toString() + " - " + productos[i].nombre + " -- Precio: $" + productos[i].precio + " | ";
+    }
+
+    return prompt(stringCatalogo);
 }
 
 //LISTA LOS PRODUCTOS QUE SU CANTIDAD SEA MAYOR A 0//
 mostrarCarrito = () =>{
-    let productos = "Su carrito: "
-    if (producto1.cantidad > 0)
-        productos += producto1.nombre + " - categoria=" + producto1.categoria + " - cant=" + producto1.cantidad + " - precio= $" + producto1.precioTotal() + " |  ";
-    if (producto2.cantidad > 0)
-        productos += producto2.nombre + " - categoria=" + producto2.categoria + " - cant=" + producto2.cantidad + " - precio= $" + producto2.precioTotal() + " |  ";
-    if (producto3.cantidad > 0)
-        productos += producto3.nombre + " - categoria=" + producto3.categoria + " - cant=" + producto3.cantidad + " - precio= $" + producto3.precioTotal() + " |  ";
-    if (producto4.cantidad > 0)
-        productos += producto4.nombre + " - categoria=" + producto4.categoria + " - cant=" + producto4.cantidad + " - precio= $" + producto4.precioTotal() + " |  ";
+    let strCarrito = "Su carrito: "
 
-    alert(productos);
+    for (let producto of productos){
+        if (producto.cantidad > 0)
+            strCarrito += producto.nombre + " - categoria=" + producto.categoria + " - cant=" + producto.cantidad + " - precio= $" + producto.precioTotal() + " |  ";
+   }
+
+    alert(strCarrito);
 }
 
 //INCREMENTA EN UNO EL PRODUCTO QUE RECIBE//
 sumarAlCarrito = nroProducto =>{
-    switch (nroProducto){
-        case "1":
-            producto1.sumarProducto();
-            break;
-        case "2":
-            producto2.sumarProducto();
-            break;
-        case "3":
-            producto3.sumarProducto();
-            break;
-        case "4":
-            producto4.sumarProducto();
-            break;
-    }
+    productos[nroProducto - 1].sumarProducto();
 }
 
 
@@ -76,6 +71,7 @@ while (validacion != "0"){
     }else if (validacion == "2"){
         mostrarCarrito();
     }else{
+        validacion = 0;
         alert("Gracias por visitar la tienda");
     }
 }
