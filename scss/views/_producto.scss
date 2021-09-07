@@ -1,0 +1,57 @@
+.producto {
+  width: 270px;
+  text-align: center;
+  margin: 1rem;
+  background-color: #e9dfdf;
+  box-shadow: 0px 0px 2px 2px #c9c0c6;
+  border-radius: 5px;
+  padding: 1em;
+  &__nombre {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    h3 {
+      font-weight: 500;
+      font-size: 1.3rem;
+      margin: 5px 0;
+      color: #1D2C36;
+    }
+  }
+  &__borde {
+    border-top: 5px solid #6e8f6e;
+    margin-bottom: 10px;
+  }
+  .carousel-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 15%;
+    overflow: hidden;
+    border: 4px solid #c4b9b9;
+  }
+  &__precio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  
+    &.precio {
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: #6e8f6e;
+    }
+
+    &.sinStock{
+      font-style: italic;
+      text-decoration: line-through;
+      color:rgb(214, 46, 46);
+    }
+  }
+  button {
+    border-color: #6e8f6e;
+    background-color: #6e8f6e;
+  }
+  &:hover{
+    box-shadow: 0px 0px 5px 5px #3f3b3e;
+  }
+}

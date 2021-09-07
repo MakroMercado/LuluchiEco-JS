@@ -1,8 +1,21 @@
-@keyframes bgBlur{
-    0%{
-        filter: blur(0px);
+@keyframes fadeInCarrito {
+    from {
+        bottom: 0; 
+        opacity: 0;
     }
-    100%{
-        filter: blur(10px);
+    to {
+        bottom: 30px; 
+        opacity: 1;
+    }
+}
+  
+@keyframes fadeOutCarrito {
+    from {
+        bottom: 30px; 
+        opacity: 1;
+    }
+    to {
+        bottom: 0; 
+        opacity: 0;
     }
 }

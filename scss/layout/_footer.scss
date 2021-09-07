@@ -1,70 +1,63 @@
-footer{
-    background-color: #6e8f6e;
-    padding: 1rem;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    text-align: center;
-    
-}
-.pie{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    .pieLogo, .pieSlogan, .pieRedes{   
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        height: 50px;
-        width: 100%;
-    }
-    .pieLogo img{
-            height: 40px;
-    }
-    .pieSlogan{
-        font-size: 18px;
-    }
-    .pieRedes{
-        font-size: 40px;
-        a{  
-            text-decoration: none;
-            color: black;
-        }
-        a:hover{
-            color: #333;
-        }
-        .fa-instagram{
-            margin-right: 10px;
-        }
-        .fa-facebook-square{
-            margin: 0 10px;
-        }
-        .fa-whatsapp{
-            margin-left:10px;
-        }
-    }
-    
-}
-.copy{
-    margin-top: 20px;
-    h6{
-        font-size: 14px;
-        display:inline;
-        border-top: 1px solid #000;
-    }
+footer {
+  background-color: #6e8f6e;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-align: center;
 }
 
-
-@media all and (min-width: 768px){
-    .pie{
-        .pieLogo, .pieSlogan, .pieRedes{
-            width: 33%;
-        }
-        .pieLogo{
-            justify-content: flex-start;
-        }
-        .pieRedes{
-            justify-content: flex-end;
-        }
+.pie {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  .pieLogo, .pieSlogan, .pieRedes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+  }
+  .pieLogo img {
+    height: 40px;
+  }
+  .pieSlogan {
+    font-size: 18px;
+  }
+  .pieRedes {
+    font-size: 40px;
+    a {
+      text-decoration: none;
+      color: black;
     }
+    a:hover {
+      color: #333;
+    }
+    .fa-instagram, .fa-facebook-square, .fa-whatsapp{
+      margin-right: 10px;
+    }
+  }  
+} 
+
+.copy {
+  margin-top: 20px;
+  h6 {
+    font-size: 14px;
+    display: inline;
+    border-top: 1px solid #000;
+  }
+}
+  
+@media all and (min-width: 768px) {
+  .pie{
+    .pieLogo, .pieSlogan, .pieRedes {
+      width: 33%;
+    }
+    .pieLogo {
+      justify-content: flex-start;
+    }
+    .pieRedes {
+      justify-content: flex-end;
+    }
+  }
 }

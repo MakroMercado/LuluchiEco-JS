@@ -3,11 +3,13 @@
 @import "base/_reset.scss"; //Reset
 @import "base/_global.scss"; //Tipografias-Elementos generales
 
-
 @import "layout/_navigation.scss"; //Navbar
 @import "layout/_footer.scss"; //Pie de pagina
 
 @import "views/_tienda.scss"; //Tienda
+@import "views/_producto.scss";
 
 @import "components/_carousel.scss"; //Carousel de productos
 @import "components/_modal.scss"; //Modals de producto
+
+@import "utilities/_animations.scss";

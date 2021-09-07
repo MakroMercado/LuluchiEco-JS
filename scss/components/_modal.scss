@@ -1,15 +1,16 @@
-.modal-body{
-    ul{
-        list-style-position: inside;
-    }   
-}
+.modal-body ul {
+    list-style-position: inside;
+  }
+  
+  .btnsCarrito {
+    margin: 10px;
+  }
+  
+  .msjCarrito a {
+    text-decoration: none;
+    color: white;
+  }
 
-.msjCarrito{
-    button{
-        margin: 10px;
-    }
-    a{
-        text-decoration: none;
-        color: white;
-    }
-}
+  .btn{
+    margin: 1px;
+  }

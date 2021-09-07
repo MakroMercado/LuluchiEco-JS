@@ -12,6 +12,10 @@
 }
 
 * {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   font-family: 'Noto Sans JP', sans-serif;
   scroll-behavior: smooth;
 }
@@ -56,12 +60,6 @@
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   min-height: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .navbar .nav-link {
@@ -72,15 +70,13 @@
   color: #ffbdbd;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  font-family: 'Londrina Solid', cursive;
-  font-size: 20px;
 }
 
 .navbar .nav-link:hover {
   padding-left: 25px;
   padding-right: 25px;
   -webkit-transform: scale(1.3);
-          transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 .navbar .navbar-brand img {
@@ -91,28 +87,23 @@
   border-bottom: 1px solid rgba(10, 9, 9, 0.836);
 }
 
-.carritoHamb {
-  width: 100%;
-  text-align: right;
-  padding-right: 0;
-}
-
 .menu-btn {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 60px;
   height: 60px;
   cursor: pointer;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
+  /* border: 3px solid #fff; */
 }
 
 .menu-btn__burger {
@@ -121,7 +112,7 @@
   background: #ffbdbd;
   border-radius: 5px;
   -webkit-box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-          box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
@@ -135,38 +126,38 @@
   background: #ffbdbd;
   border-radius: 5px;
   -webkit-box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-          box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
 .menu-btn__burger::before {
   -webkit-transform: translateY(10px);
-          transform: translateY(10px);
+  transform: translateY(10px);
 }
 
 .menu-btn__burger::after {
   -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 /* ANIMATION */
 .menu-btn.open .menu-btn__burger {
   -webkit-transform: translateX(50px);
-          transform: translateX(50px);
+  transform: translateX(50px);
   background: transparent;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .menu-btn.open .menu-btn__burger::before {
   -webkit-transform: rotate(45deg) translate(-35px, 35px);
-          transform: rotate(45deg) translate(-35px, 35px);
+  transform: rotate(45deg) translate(-35px, 35px);
 }
 
 .menu-btn.open .menu-btn__burger::after {
   -webkit-transform: rotate(-45deg) translate(-35px, -35px);
-          transform: rotate(-45deg) translate(-35px, -35px);
+  transform: rotate(-45deg) translate(-35px, -35px);
 }
 
 footer {
@@ -233,16 +224,8 @@ footer {
   color: #333;
 }
 
-.pie .pieRedes .fa-instagram {
+.pie .pieRedes .fa-instagram, .pie .pieRedes .fa-facebook-square, .pie .pieRedes .fa-whatsapp {
   margin-right: 10px;
-}
-
-.pie .pieRedes .fa-facebook-square {
-  margin: 0 10px;
-}
-
-.pie .pieRedes .fa-whatsapp {
-  margin-left: 10px;
 }
 
 .copy {
@@ -271,12 +254,25 @@ footer {
   }
 }
 
-#containerTienda {
+#tienda {
   width: 100%;
   padding: 100px 0;
   padding-bottom: 20px;
   background-color: #f5eeee;
   text-align: center;
+}
+
+#dropdownsProductos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 2rem 2rem;
 }
 
 #productos {
@@ -291,6 +287,348 @@ footer {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   margin: 0 1.5rem;
+}
+
+#avisoCarrito {
+  display: none;
+  min-width: 220px;
+  margin-left: -110px;
+  background-color: #6e8f6e;
+  color: #ffe6e6;
+  text-align: center;
+  padding: 16px;
+  font-size: 14px;
+  position: fixed;
+  border: 4px dashed black;
+  left: 50%;
+  bottom: 0px;
+}
+
+.itemCarrito {
+  padding: 0 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.itemCarrito__imagen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 100%;
+}
+
+.itemCarrito__imagen img {
+  width: 100px;
+  border: 4px solid #6e8f6e;
+  border-radius: 15%;
+}
+
+.itemCarrito__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 100%;
+}
+
+.itemCarrito__info .itemCarrito__cantPrec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  width: 100%;
+}
+
+.itemCarrito__info .itemCarrito__cantPrec .itemCantidad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+}
+
+.itemCarrito__info .itemCarrito__cantPrec .itemPrecio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+}
+
+.itemCarrito__info .itemCarrito__cantPrec .itemBorrar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+}
+
+.itemCarrito__info .itemCarrito__cantPrec .itemBorrar button {
+  background-color: #e64b4b;
+}
+
+.itemBtn {
+  width: 25px;
+  height: 25px;
+  background-color: #6e8f6e;
+  border-radius: 15%;
+  color: white;
+  margin: 10px;
+  padding: 0;
+}
+
+@media all and (min-width: 452px) {
+  .itemCarrito {
+    padding: 0 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
+  }
+  .itemCarrito__imagen {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 30%;
+  }
+  .itemCarrito__imagen img {
+    width: 100px;
+  }
+  .itemCarrito__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 70%;
+  }
+  .itemCarrito__info .itemCarrito__cantPrec {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .itemCarrito__info .itemCarrito__cantPrec .itemCantidad {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+  }
+  .itemCarrito__info .itemCarrito__cantPrec .itemPrecio {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-flex: 1.5;
+        -ms-flex-positive: 1.5;
+            flex-grow: 1.5;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .itemCarrito {
+    padding: 0 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
+  }
+  .itemCarrito__imagen {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 15%;
+  }
+  .itemCarrito__imagen img {
+    width: 100px;
+    height: 100px;
+  }
+  .itemCarrito__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 85%;
+  }
+  .itemCarrito__info .itemTitulo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 50%;
+  }
+  .itemCarrito__info .itemCarrito__cantPrec {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 50%;
+  }
+  .itemCarrito__info .itemCarrito__cantPrec .itemCantidad {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+  }
+  .itemCarrito__info .itemCarrito__cantPrec .itemPrecio {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-flex: 1.5;
+        -ms-flex-positive: 1.5;
+            flex-grow: 1.5;
+  }
 }
 
 .producto {
@@ -332,7 +670,15 @@ footer {
   margin-bottom: 10px;
 }
 
-.producto .producto__precio {
+.producto .carousel-item img {
+  width: 200px;
+  height: 200px;
+  border-radius: 15%;
+  overflow: hidden;
+  border: 4px solid #c4b9b9;
+}
+
+.producto__precio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -348,14 +694,16 @@ footer {
           align-items: center;
 }
 
-.producto .producto__precio p {
+.producto__precio.precio {
   font-weight: 500;
   font-size: 1.5rem;
   color: #6e8f6e;
 }
 
-.producto .producto__precio .noStock {
-  color: red;
+.producto__precio.sinStock {
+  font-style: italic;
+  text-decoration: line-through;
+  color: #d62e2e;
 }
 
 .producto button {
@@ -363,152 +711,9 @@ footer {
   background-color: #6e8f6e;
 }
 
-.producto .sinStock {
-  text-decoration: line-through;
-}
-
 .producto:hover {
   -webkit-box-shadow: 0px 0px 5px 5px #3f3b3e;
           box-shadow: 0px 0px 5px 5px #3f3b3e;
-}
-
-#dropdownsProductos {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin: 2rem 2rem;
-}
-
-.msjCarrito button {
-  margin: 10px;
-}
-
-.msjCarrito a {
-  text-decoration: none;
-  color: white;
-}
-
-.producto .botonesCantidad {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 1em;
-}
-
-.producto .botonesCantidad .botones {
-  width: 30px;
-  height: 30px;
-  border-radius: 10%;
-}
-
-.producto .botonesCantidad p {
-  font-size: 20px;
-  font-family: 'Londrina Solid', cursive;
-}
-
-.producto .botonesCantidad #cantidad {
-  padding: 0 5px;
-  border: 3px solid #6e8f6e;
-  text-align: center;
-}
-
-.btn {
-  margin: 1px;
-}
-
-#avisoCarrito {
-  visibility: hidden;
-  /* Hidden by default. Visible on click */
-  min-width: 250px;
-  /* Set a default minimum width */
-  margin-left: -125px;
-  /* Divide value of min-width by 2 */
-  background-color: #333;
-  /* Black background color */
-  color: #fff;
-  /* White text color */
-  text-align: center;
-  /* Centered text */
-  border-radius: 2px;
-  /* Rounded borders */
-  padding: 16px;
-  /* Padding */
-  position: fixed;
-  /* Sit on top of the screen */
-  z-index: 1;
-  /* Add a z-index if needed */
-  left: 50%;
-  /* Center the snackbar */
-  bottom: 30px;
-  /* 30px from the bottom */
-}
-
-/* Show the snackbar when clicking on a button (class added with JavaScript) */
-#avisoCarrito.show {
-  visibility: visible;
-  /* Show the snackbar */
-  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-  However, delay the fade out process for 2.5 seconds */
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-/* Animations to fade the snackbar in and out */
-@-webkit-keyframes fadein {
-  from {
-    bottom: 0;
-    opacity: 0;
-  }
-  to {
-    bottom: 30px;
-    opacity: 1;
-  }
-}
-
-@keyframes fadein {
-  from {
-    bottom: 0;
-    opacity: 0;
-  }
-  to {
-    bottom: 30px;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeout {
-  from {
-    bottom: 30px;
-    opacity: 1;
-  }
-  to {
-    bottom: 0;
-    opacity: 0;
-  }
-}
-
-@keyframes fadeout {
-  from {
-    bottom: 30px;
-    opacity: 1;
-  }
-  to {
-    bottom: 0;
-    opacity: 0;
-  }
 }
 
 .carousel-item img {
@@ -527,12 +732,60 @@ footer {
   list-style-position: inside;
 }
 
-.msjCarrito button {
+.btnsCarrito {
   margin: 10px;
 }
 
 .msjCarrito a {
   text-decoration: none;
   color: white;
+}
+
+.btn {
+  margin: 1px;
+}
+
+@-webkit-keyframes fadeInCarrito {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInCarrito {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOutCarrito {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutCarrito {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */
