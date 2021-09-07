@@ -279,7 +279,7 @@ footer {
   text-align: center;
 }
 
-.productos {
+#productos {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
